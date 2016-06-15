@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@import url(style.css);
+ 
+#circle circle {
+	fill: none;
+	pointer-events: all;
+	}
+ 
+.group path {
+	fill-opacity: .5;
+	}
+ 
+path.chord {
+	stroke: #000;
+	stroke-width: .25px;
+	}
+ 
+#circle:hover path.fade {
+	display: none;
+	}
+
+#circle:hover path.prime {
+        fill-opacity: .1;
+	stroke: #000;
+	}
+
+circle {
+       fill: black;
+       opacity: 1;
+       }
+
+path{
+	stroke: #b30000;
+       	stroke-width: 2;
+        fill: #fde0dd;
+        opacity: 1;
+	}
+
+</style>
+	<aside> <a href="http://d3js.org/"></a>.</aside>
+	<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+ 
+var margin = {top:10, right: 10, bottom: 10, left: 10},
+	docHeight = $(document).height() - margin.left - margin.right,
+        docWidth  = $(document).width() - margin.top - margin.bottom;
+var minSize = Math.min(500,(docWidth-40),(docHeight-40)),
+        width = minSize,
+        height = minSize;
+
+outerRadius = Math.min(width, height) / 2 - 10 ,
+innerRadius = outerRadius - 24;
+
+var formatPercent = d3.format(".1%");
+ 
+var arc = d3.svg.arc()
+	.innerRadius(innerRadius-20)
+	.outerRadius(outerRadius);
+ 
+var layout = d3.layout.chord()
+	.padding(.04)
+	.sortSubgroups(d3.descending)
+	.sortChords(d3.ascending);
+ 
+var path = d3.svg.chord()
+	.radius(innerRadius-25);
+ 
+var svg = d3.select("body").append("svg")
+	.attr("width", docWidth)
+	.attr("height", docHeight)
+	.append("g")
+	.attr("id", "circle")
+	.attr("transform", "translate(" + width + "," + height/1.25 + ")");
+ 
+//Add heart
+var x, y;
+var data = [];
+for (var i = 0; i < 350; i++) {
+        z = i*0.5;
+        x = 16 * Math.pow(Math.sin(z),3);
+        y = 13 * Math.cos(z) - 5* Math.cos(2*z) - 2 * Math.cos(3*z) - Math.cos(4*z)
+        data[i] = [x,y];
+        }
+
+//Scales
+var xScale = d3.scale.linear()
+        .domain([d3.min(data, function(d) { return d[0]; }), d3.max(data, function(d) { return d[0]; })])
+        .range([ -400, width-100 ]);
+
+var yScale = d3.scale.linear()
+        .domain([d3.min(data, function(d) { return d[1]; }), d3.max(data, function(d) { return d[1]; })])
+        .range([ height-100, -400 ]);
+
+svg.append('g')
+        .attr('transform', 'translate(' + (docWidth/2-width/2) + ',' + (docHeight/2-height/2) + ')')
+        .attr('width', width)
+        .attr('height', height);
+
+//Create and draw the path that connects the dots
+var line = d3.svg.line()
+        .interpolate('linear')
+        .x(function(d){ return xScale(d[0]) })
+        .y(function(d){ return yScale(d[1]) });
+
+var path2 = svg.append("g").append("path")
+        .attr("d", line(data));
+
+var totalLength = path2.node().getTotalLength();	  
+path2.attr("stroke-dasharray", totalLength + " " + totalLength)
+	.attr("stroke-dashoffset", totalLength)
+	.transition()
+	.duration(12e4).delay(500)
+	.ease("linear")
+	.attr("stroke-dashoffset", 1);
+
+svg.append("circle")
+	.attr("r", outerRadius);
+ 
+d3.csv("data/cast.csv", function(characters) {
+d3.json("data/ga.json", function(matrix) {
+ 
+// Compute the chord layout.
+layout.matrix(matrix);
+ 
+// Add a group per neighborhood.
+var group = svg.selectAll(".group")
+	.data(layout.groups)
+	.enter().append("g")
+	.attr("class", "group")
+	.on("mouseover", mouseover)
+	.on("mouseout", function(){
+    		d3.select(".chord").style("opacity", 1);
+		d3.select(".chord").style("fill", function(d) { return characters[d.source.index].color; })
+		}) ;
+ 
+// Add a mouseover title.
+group.append("title").text(function(d, i) {
+	return characters[i].name;
+});
+
+// Add the group arc.
+var groupPath = group.append("path")
+	.attr("id", function(d, i) { return "group" + i; })
+	.attr("d", arc)
+	.style("fill", function(d, i) { return characters[i].color; });
+ 
+// Add a text label.
+group.append("text")
+ 	.each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+ 	.attr("dy", ".35em")
+	.attr("font-size", "14px")
+	.attr("transform", function(d) {
+    	return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+        	+ "translate(" + (innerRadius + 26) + ")"
+        	+ (d.angle > Math.PI ? "rotate(180)" : "");
+  	})
+  	.style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+  	.text(function(d, i) { return characters[i].name; });
+ 
+// Add the chords.
+var chord = svg.selectAll(".chord")
+	.data(layout.chords)
+	.enter().append("path")
+	.attr("class", "chord")
+	.style("fill", function(d) { return characters[d.source.index].color; })
+	.attr("d", path);
+
+//Add legend
+//var legend = svg.selectAll(".legend")
+//            .data(layout.groups)
+//            .enter().append("g")
+//            .attr("class", "legend")
+//            .attr("transform", function (d, i) { return "translate(55," + i * 14 + ")"; });
+//
+//        legend.append("rect")
+//            .attr("x", width - 10)
+//	    .attr("y", -350)
+//          .attr("width", 7)
+//            .attr("height", 7)
+//	    .style("fill", function(d,i) { return characters[i].color; })
+//            .style("stroke", "grey");
+//
+//        legend.append("text")
+//            .attr("x", width - 12)
+//	    .attr("y", -350)
+//            .attr("dy", ".75em")
+//            .style("text-anchor", "end")
+//            .text(function(d, i) { return characters[i].name; });
+
+function mouseover(d, i) {
+	console.log(characters[i].name);
+	var arr = [];
+	chord.classed("fade", function(p) {
+		if(p.source.index==i){arr.push(p.target.index);}
+		if(p.target.index==i){arr.push(p.source.index);}
+		});
+
+	arr.forEach(logArrayElements);
+	arr = unique(arr);
+
+	arr.forEach(logArrayElements);
+	arr = unique(arr);
+        
+	arr.forEach(logArrayElements);
+        arr = unique(arr);
+
+	arr.forEach(logArrayElements);
+        arr = unique(arr);
+
+	arr.forEach(logArrayElements);
+        arr = unique(arr);
+
+	arr.forEach(logArrayElements);
+	arr = unique(arr);
+        console.log(arr);
+	
+	chord.classed("prime", function(p) {
+                        return p.source.index != i && p.target.index != i;
+		});
+
+	
+        chord.classed("fade", function(p) {
+			return p.source.index != arr[0] && p.target.index != arr[0]
+							&& p.source.index != arr[1] && p.target.index != arr[1]
+							&& p.source.index != arr[2] && p.target.index != arr[2]
+							&& p.source.index != arr[3] && p.target.index != arr[3]
+							&& p.source.index != arr[4] && p.target.index != arr[4]
+							&& p.source.index != arr[5] && p.target.index != arr[5]
+                                                        && p.source.index != arr[6] && p.target.index != arr[6]
+                                                        && p.source.index != arr[7] && p.target.index != arr[7]
+                                                        && p.source.index != arr[8] && p.target.index != arr[8]
+                                                        && p.source.index != arr[9] && p.target.index != arr[9]
+                                                        && p.source.index != arr[10] && p.target.index != arr[10]
+                                                        && p.source.index != arr[11] && p.target.index != arr[11]
+                                                        && p.source.index != arr[12] && p.target.index != arr[12]
+                                                        && p.source.index != arr[13] && p.target.index != arr[13]
+                                                        && p.source.index != arr[14] && p.target.index != arr[14]
+                                                        && p.source.index != arr[15] && p.target.index != arr[15]
+                                                        && p.source.index != arr[16] && p.target.index != arr[16]
+                                                        && p.source.index != arr[17] && p.target.index != arr[17]
+                                                        && p.source.index != arr[18] && p.target.index != arr[18]
+                                                        && p.source.index != arr[19] && p.target.index != arr[19]
+                                                        && p.source.index != arr[20] && p.target.index != arr[20]
+                                                        && p.source.index != arr[21] && p.target.index != arr[21]
+                                                        && p.source.index != arr[22] && p.target.index != arr[22]
+                                                        && p.source.index != arr[23] && p.target.index != arr[23]
+                                                        && p.source.index != arr[24] && p.target.index != arr[24]
+                                                        && p.source.index != arr[25] && p.target.index != arr[25]
+                                                        && p.source.index != arr[26] && p.target.index != arr[26]
+                                                        && p.source.index != arr[27] && p.target.index != arr[27]
+                                                        && p.source.index != arr[28] && p.target.index != arr[28]
+                                                        && p.source.index != arr[29] && p.target.index != arr[29]
+                                                        && p.source.index != arr[30] && p.target.index != arr[30]
+                                                        && p.source.index != arr[31] && p.target.index != arr[31]
+                                                        && p.source.index != arr[32] && p.target.index != arr[32]
+                                                        && p.source.index != arr[33] && p.target.index != arr[33]
+                                                        && p.source.index != arr[34] && p.target.index != arr[34]
+                                                        && p.source.index != arr[35] && p.target.index != arr[35]
+                                                        && p.source.index != arr[36] && p.target.index != arr[36]
+                                                        && p.source.index != arr[37] && p.target.index != arr[37]
+                                                        && p.source.index != arr[38] && p.target.index != arr[38]
+                                                        && p.source.index != arr[39] && p.target.index != arr[39]
+                                                        && p.source.index != arr[40] && p.target.index != arr[40];			
+        	});
+                	
+	}
+
+
+function logArrayElements(element, index, array) {
+                chord.classed("fade", function(p) {
+                        if(p.source.index == element){array.push(p.target.index);}
+			if(p.source.index == element){array.push(p.source.index);}
+                        if(p.target.index == element){array.push(p.source.index);}
+			if(p.target.index == element){array.push(p.target.index);}
+                });
+        }
+
+function unique(list) {
+    var result = [];
+    $.each(list, function(i, e) {
+        if ($.inArray(e, result) == -1) result.push(e);
+    });
+    return result;
+}
+});
+});
+ 
+</script>
+ 
