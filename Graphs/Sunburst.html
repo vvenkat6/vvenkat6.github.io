@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+path {
+  stroke: #000000;
+  fill-rule: evenodd;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif,bold;
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+
+var flaredata = {"name":"Dessert","children": 
+					[
+					{"name":"Cake","children": 
+						[{"name":"Chocolate","size":7.68},{"name":"Cheesecake","size":6.08},{"name":"Vanilla","size":2.88},{"name":"Red Velvet","size":2.56},{"name":"Pineapple UD","size":1.6},{"name":"Strawberry","size":0.96},{"name":"Other","size":10.24}]
+					},
+					{"name":"Ice Cream","children":
+						[{"name":"Chocolate","size":4.62},{"name":"Vanilla","size":2.94},{"name":"Strawberry","size":2.73},{"name":"Blueberry","size":2.73},{"name":"Cherry","size":1.68},{"name":"Other","size":6.3}]
+					},
+					{"name":"Cupcakes","children":
+						[{"name":"Red Velvet","size":3.48},{"name":"Chocolate","size":3.21},{"name":"Vanilla","size":2.88},{"name":"Strawberry","size":0.6},{"name":"Cherry","size":0.36},{"name":"Other","size":1.44}]
+					},
+					{"name":"Cookies","children":
+						[{"name":"Chocolate Chip","size":2.9},{"name":"Oreo","size":1.6},{"name":"Macademia Nut","size":0.1},{"name":"Snicker Doodle","size":0.07},{"name":"Sugar Cookie","size":0.05},{"name":"Oatmeal","size":0.03},{"name":"Other","size":0.3}]
+					},
+					{"name":"Pie","children":
+						[{"name":"Chocolate Chip","size":2.79},{"name":"Pumpkin","size":2.52},{"name":"Cherry","size":1.12},{"name":"Apple","size":1.08},{"name":"Bum-berry","size":0.36},{"name":"Pecan","size":0.18},{"name":"Other","size":0.81}]
+					},
+					{"name":"Candy","children":
+						[{"name":"Hershey","size":0.8},{"name":"Snickers","size":0.65},{"name":"Skittles","size":0.55},{"name":"Butterfinger","size":0.4},{"name":"Nerds","size":0.25},{"name":"Jelly Bean","size":0.15},{"name":"Milkyway","size":0.1},{"name":"Starbursts","size":0.05},{"name":"Other","size":2.05}]
+					},
+					{"name":"Other","size":11}
+					]
+	}
+
+var width = 960,
+    height = 700,
+    radius = Math.min(width, height) / 2;
+
+var x = d3.scale.linear()
+    .range([0, 2 * Math.PI]);
+
+var y = d3.scale.linear()
+    .range([0, radius]);
+
+var color = d3.scale.ordinal().domain(["Dessert","Cake","Ice Cream","Cupcakes","Other","Pie","Cookies","Candy","Milkyway"]).range(["#ffffff","#7f2704","#a63603","#d94801","#f16913","#fd8d3c","#fdae6b","#fdd0a2","#fee6ce"]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", 800)
+    .datum(flaredata)   
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + (height * .52) + ")");
+
+var partition = d3.layout.partition()
+    .value(function(d) { return d.size; });
+
+var arc = d3.svg.arc()
+    .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
+    .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
+    .innerRadius(function(d) { return Math.max(0, y(d.y)); })
+    .outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); });
+
+  var g = svg.selectAll("g")
+    .data(partition.nodes)        
+    .enter().append("g");
+
+  var path = g.append("path")
+    .attr("d", arc)
+    .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+    .on("click", click);
+
+  var text = g.append("text")
+    .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+    .attr("x", function(d) { return y(d.y); })
+    .attr("dx", "6") // margin
+    .attr("dy", ".35em") // vertical-align
+    .text(function(d) { return d.name; });
+
+  function click(d) {
+    // fade out all text elements
+    text.transition().attr("opacity", 0);
+
+    path.transition()
+      .duration(750)
+      .attrTween("d", arcTween(d))
+      .each("end", function(e, i) {
+          // check if the animated element's data e lies within the visible angle span given in d
+          if (e.x >= d.x && e.x < (d.x + d.dx)) {
+            // get a selection of the associated text element
+            var arcText = d3.select(this.parentNode).select("text");
+            // fade in the text element and recalculate positions
+            arcText.transition().duration(750)
+              .attr("opacity", 1)
+              .attr("transform", function() { return "rotate(" + computeTextRotation(e) + ")" })
+              .attr("x", function(d) { return y(d.y); });
+          }
+      });
+  }
+
+d3.select(self.frameElement).style("height", height + "px");
+
+// Interpolate the scales!
+function arcTween(d) {
+  var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+      yd = d3.interpolate(y.domain(), [d.y, 1]),
+      yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+  return function(d, i) {
+    return i
+        ? function(t) { return arc(d); }
+        : function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
+  };
+}
+
+function computeTextRotation(d) {
+  return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
+
+</script>
