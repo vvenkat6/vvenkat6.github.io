@@ -18,6 +18,7 @@ body {
 </style>
 <body>
 <script src="d3.v3.min.js"></script>
+<script src="jquery.min.js"></script>
 <script>
 
 
@@ -44,10 +45,15 @@ var flaredata = {"name":"Dessert","children":
 					{"name":"Other","size":11}
 					]
 	}
+var margin = {top:10, right: 10, bottom: 10, left: 10},
+        docHeight = $(document).height() - margin.left - margin.right,
+        docWidth  = $(document).width() - margin.top - margin.bottom;
 
-var width = 960,
-    height = 700,
-    radius = Math.min(width, height) / 2;
+var minSize = Math.min(800,(docWidth),(docHeight)),
+        width = minSize,
+        height = minSize;
+
+var radius = (Math.min(width, height) / 2) - 25;
 
 var x = d3.scale.linear()
     .range([0, 2 * Math.PI]);
@@ -59,7 +65,8 @@ var color = d3.scale.ordinal().domain(["Dessert","Cake","Ice Cream","Cupcakes","
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
-    .attr("height", 800)
+    .attr("height", height)
+    .attr("viewBox","0 0 " + width + " " + height)
     .datum(flaredata)   
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + (height * .52) + ")");
