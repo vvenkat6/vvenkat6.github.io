@@ -49,11 +49,11 @@ var margin = {top:10, right: 10, bottom: 10, left: 10},
         docHeight = $(document).height() - margin.left - margin.right,
         docWidth  = $(document).width() - margin.top - margin.bottom;
 
-var minSize = Math.min(800,(docWidth),(docHeight)),
+var minSize = Math.min((docWidth),(docHeight)),
         width = minSize,
         height = minSize;
 
-var radius = (Math.min(width, height) / 2) - 25;
+var radius = (Math.min(width, height) / 2.5);
 
 var x = d3.scale.linear()
     .range([0, 2 * Math.PI]);
@@ -69,7 +69,7 @@ var svg = d3.select("body").append("svg")
     .attr("viewBox","0 0 " + width + " " + height)
     .datum(flaredata)   
     .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + (height * .52) + ")");
+    .attr("transform", "translate(" + width / 1.75 + "," + (height* .52) + ")");
 
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; });
