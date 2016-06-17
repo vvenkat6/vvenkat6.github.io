@@ -37,7 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	
 </head>
 
 <body>
@@ -92,10 +92,20 @@
 	    </div>
 	</div>
 
-        <div class="row">
+	<ul>
+	<!-- For filtering controls add -->
+   	<li class="btn btn-default btn-lg" data-filter="all"> All Topics </li>
+	<li class="btn btn-default btn-lg" data-shuffle> Shuffle </li>
+   	<li class="btn btn-default btn-lg" data-filter="1"> Food </li>
+   	<li class="btn btn-default btn-lg" data-filter="2"> TV Shows</li>
+   	<li class="btn btn-default btn-lg" data-filter="3"> World </li>
+	</ul>
+
+<div class="filtr-container">
+        <div class="filtr-item" data-category="2" data-sort="1"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border" src="img/thumbnails/GA.png" alt="">
+                    <img class="img-responsive img-border" src="img/thumbnails/GA.png" alt="Grey's Anatomy Hook-Up">
 			<h2>Grey's Anatomy Hook-ups
                         <br>
                         <small>June 3, 2016</small>
@@ -105,11 +115,11 @@
                     <hr>
                 </div>
             </div>
-        </div>
-	<div class="row">
+        </div></div>
+	<div class="filtr-item" data-category="3" data-sort="2"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border" src="img/thumbnails/internet.png" alt="">
+                    <img class="img-responsive img-border" src="img/thumbnails/internet.png" alt="Internet speeds">
                         <h2>Internet Speeds
                         <br>
                         <small>June 10, 2016</small>
@@ -118,9 +128,9 @@
                     <a href="internetMain.html" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
-            </div>
+            </div></div>
         </div>
-	<div class="row">
+	<div class="filtr-item" data-category="1" data-sort="3"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
                     <img class="img-responsive img-border" src="img/thumbnails/dessert.png" alt="">
@@ -132,7 +142,11 @@
                     <a href="favDessert.html" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
-                <div class="col-lg-12 text-center">
+            </div>
+        </div></div>
+<!--
+	<div class="box">
+		<div class="col-lg-12 text-center">
                     <ul class="pager">
                         <li class="previous"><a href="#">&larr; Older</a>
                         </li>
@@ -140,11 +154,9 @@
                         </li>
                     </ul>
                 </div>
-
-            </div>
-        </div>
-
-
+	</div>
+-->
+</div>
     </div>
     <!-- /.container -->
 
@@ -187,6 +199,21 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.filterizr.js"></script>
+    <script type="text/javascript">
+	var options = {
+   		animationDuration: 0.9, //in seconds
+   		filter: 'all', //Initial filter
+		layout: 'packed'
+	}
+        $(function() {
+            //Initialize filterizr with default options
+
+            var filterizd = $('.filtr-container').filterizr(options);
+	    filterizd.filterizr('setOptions', options);
+        });
+    </script>
 
     <script id="dsq-count-scr" src="//datadazzles.disqus.com/count.js" async></script>
 </body>

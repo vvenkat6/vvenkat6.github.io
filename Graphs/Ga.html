@@ -45,7 +45,7 @@ path{
         <script src="jquery.min.js"></script>
 <script>
  
-var margin = {top:10, right: 10, bottom: 10, left: 10},
+var margin = {top:0, right: 10, bottom:0, left: 10},
 	docHeight = $(document).height() - margin.left - margin.right,
         docWidth  = $(document).width() - margin.top - margin.bottom;
 var minSize = Math.min(500,(docWidth-40),(docHeight-40)),
@@ -70,8 +70,8 @@ var path = d3.svg.chord()
 	.radius(innerRadius-25);
  
 var svg = d3.select("body").append("svg")
-	.attr("width", docWidth)
-	.attr("height", docHeight)
+	.attr("width", docWidth-100)
+	.attr("height", docHeight-30)
 	.append("g")
 	.attr("id", "circle")
 	.attr("transform", "translate(" + width + "," + height/1.25 + ")");
