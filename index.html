@@ -27,10 +27,6 @@
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -91,26 +87,28 @@
 		</div>
 	    </div>
 	</div>
+	<div class="row">
+		<div class="col-md-12">
+		<ul>
+		<div class="col-md-2"><li class="btn btn-primary btn-block" data-filter="all">Show All </li></div>
+		<div class="col-md-2"><li class="btn btn-success btn-block" data-shuffle> Shuffle </li></div>
+   		<div class="col-md-2"><li class="btn btn-default btn-block" data-filter="1">Food</li></div>
+   		<div class="col-md-2"><li class="btn btn-default btn-block" data-filter="2"> TV Shows</li></div>
+   		<div class="col-md-2"><li class="btn btn-default btn-block" data-filter="3"> World </li></div>
+		</ul>
+		</div>
+	</div>
+	<br>
 
-	<ul>
-	<!-- For filtering controls add -->
-   	<li class="btn btn-default btn-lg" data-filter="all"> All Topics </li>
-	<li class="btn btn-default btn-lg" data-shuffle> Shuffle </li>
-   	<li class="btn btn-default btn-lg" data-filter="1"> Food </li>
-   	<li class="btn btn-default btn-lg" data-filter="2"> TV Shows</li>
-   	<li class="btn btn-default btn-lg" data-filter="3"> World </li>
-	</ul>
-
-<div class="filtr-container">
+      <div class="filtr-container">
         <div class="filtr-item" data-category="2" data-sort="1"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border" src="img/thumbnails/GA.png" alt="Grey's Anatomy Hook-Up">
+                    <img class="img-border img-responsive img-thumbnail" src="img/thumbnails/GA.png" alt="Grey's Anatomy Hook-Up">
 			<h2>Grey's Anatomy Hook-ups
                         <br>
-                        <small>June 3, 2016</small>
                     	</h2>
-		    <p><strong>Inspiration:</strong> "We're all related through sex. We have sexual relations. That is horribly weird." ~Callie Torres</p>
+		    <p>"We're all related through sex...That is horribly weird."</p>
                     <a href="gaMain.html" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
@@ -119,12 +117,11 @@
 	<div class="filtr-item" data-category="3" data-sort="2"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border" src="img/thumbnails/internet.png" alt="Internet speeds">
+                    <img class="img-responsive img-border img-thumbnail" src="img/thumbnails/internet.png" alt="Internet speeds">
                         <h2>Internet Speeds
                         <br>
-                        <small>June 10, 2016</small>
                         </h2>
-                    <p><strong>Inspiration:</strong> "Sucky net seems to follow me everywhere"</p>
+                    <p>"Sucky net seems to follow me everywhere"</p>
                     <a href="internetMain.html" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
@@ -133,12 +130,11 @@
 	<div class="filtr-item" data-category="1" data-sort="3"><div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border" src="img/thumbnails/dessert.png" alt="">
+                    <img class="img-responsive img-border img-thumbnail" src="img/thumbnails/dessert.png" alt="dessert graph">
                         <h2>Favorite Desserts
                         <br>
-                        <small>June 17, 2016</small>
                         </h2>
-                    <p><strong>Inspiration:</strong> "Ross doesn't like ice cream?"</p>
+                    <p>"Ross doesn't like ice cream?"</p>
                     <a href="favDessert.html" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
@@ -203,13 +199,11 @@
     <script src="js/jquery.filterizr.js"></script>
     <script type="text/javascript">
 	var options = {
-   		animationDuration: 0.9, //in seconds
-   		filter: 'all', //Initial filter
+   		animationDuration: 0.9, 
+   		filter: 'all', 
 		layout: 'packed'
 	}
         $(function() {
-            //Initialize filterizr with default options
-
             var filterizd = $('.filtr-container').filterizr(options);
 	    filterizd.filterizr('setOptions', options);
         });
