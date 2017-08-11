@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHOTORAMA</title>
+    <description>Photo Journal</description>
+    <link>http://akshaychandra92.github.io/</link>
+    <atom:link href="http://akshaychandra92.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 31 Aug 2016 15:28:53 -0400</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2016 15:28:53 -0400</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Around the World in 80 Days</title>
+        <description>&lt;p&gt;&quot;You're a sly dog!&quot; said Passepartout, winking at him.&lt;/p&gt;
+
+&lt;p&gt;This expression rather disturbed Fix, without his knowing why.  Had the Frenchman guessed his real purpose?  He knew not what to think.  But how could Passepartout have discovered that he was a detective?  Yet, in speaking as he did, the man evidently meant more than he expressed.&lt;/p&gt;
+
+&lt;p&gt;Passepartout went still further the next day; he could not hold his tongue.&lt;/p&gt;
+
+&lt;p&gt;&quot;Mr. Fix,&quot; said he, in a bantering tone, &quot;shall we be so unfortunate as to lose you when we get to Hong Kong?&quot;&lt;/p&gt;
+
+&lt;p&gt;&quot;Why,&quot; responded Fix, a little embarrassed, &quot;I don't know; perhaps&amp;mdash;&quot;&lt;/p&gt;
+
+&lt;p&gt;&quot;Ah, if you would only go on with us!  An agent of the Peninsular Company, you know, can't stop on the way!  You were only going to Bombay, and here you are in China.  America is not far off, and from America to Europe is only a step.&quot;&lt;/p&gt;
+
+&lt;p&gt;Fix looked intently at his companion, whose countenance was as serene as possible, and laughed with him.  But Passepartout persisted in chaffing him by asking him if he made much by his present occupation.&lt;/p&gt;
+
+&lt;p&gt;&quot;Yes, and no,&quot; returned Fix; &quot;there is good and bad luck in such things.  But you must understand that I don't travel at my own expense.&quot;&lt;/p&gt;
+
+&lt;p&gt;&quot;Oh, I am quite sure of that!&quot; cried Passepartout, laughing heartily.&lt;/p&gt;
+
+&lt;p&gt;Fix, fairly puzzled, descended to his cabin and gave himself up to his reflections.  He was evidently suspected; somehow or other the Frenchman had found out that he was a detective.  But had he told his master?  What part was he playing in all this: was he an accomplice or not?  Was the game, then, up?  Fix spent several hours turning these things over in his mind, sometimes thinking that all was lost, then persuading himself that Fogg was ignorant of his presence, and then undecided what course it was best to take.&lt;/p&gt;
+
+&lt;p&gt;Placeholder text by &lt;a href=&quot;http://www.fillerati.com/&quot;&gt;Fillerati&lt;/a&gt;. Photography by &lt;a href=&quot;https://unsplash.com&quot;&gt;UNSPLASH&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+        <link>http://akshaychandra92.github.io/journal/Around-the-World-in-80-Days/</link>
+        <guid isPermaLink="true">http://akshaychandra92.github.io/journal/Around-the-World-in-80-Days/</guid>
+        
+        <category>tag03</category>
+        
+        
+        <category>cat04</category>
+        
+      </item>
+    
+      <item>
+        <title>BLOG IMAGE PERFORMANCE IS NECESSARY</title>
+        <description>&lt;p&gt;I would like to thank &lt;a href=&quot;http://designyourownblog.com/about-dyob/&quot;&gt;Marianne&lt;/a&gt;, owner of &lt;a href=&quot;http://designyourownblog.com/&quot;&gt;DESIGN YOUR OWN BLOG&lt;/a&gt; who gave me permission to link to her post where she is talking about blog image performance.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Is blog image performance necessary?&lt;/p&gt;
+
+  &lt;p&gt;Consider this:&lt;/p&gt;
+
+  &lt;p&gt;Your users don’t want to wait more than 3 seconds for your page to load.&lt;/p&gt;
+
+  &lt;p&gt;Google pays attention to your website speed and ranks it accordingly.&lt;/p&gt;
+
+  &lt;p&gt;So I’d say yes, it’s very necessary.&lt;/p&gt;
+
+  &lt;p&gt;– Marianne&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you care about your readers &lt;a href=&quot;http://designyourownblog.com/blog-image-performance/&quot;&gt;this&lt;/a&gt; post is a &lt;b&gt;MUST READ&lt;/b&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are 3 steps (4 for JPEGs) we should take to optimize our images:&lt;/p&gt;
+
+  &lt;p&gt;Always resize the image to the largest size it will appear.&lt;/p&gt;
+
+  &lt;p&gt;Further reduce JPEG file size with these tricks.&lt;/p&gt;
+
+  &lt;p&gt;Reduce quality on save.&lt;/p&gt;
+
+  &lt;p&gt;Run it through a lossless image compression tool.&lt;/p&gt;
+
+  &lt;p&gt;– Marianne&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This Jekyll template was crafted in order to be used by photobloggers. If the photos you upload are not optimized, the page loading time will increase significantly! &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;DO NOT upload an image at its full size, such as 2500 x 3500, and then resize it in the settings after you’ve uploaded it to your blog!&lt;/p&gt;
+
+  &lt;p&gt;– Marianne&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; So, dig in her informative post and learn how you can have a fast loading photography website!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://designyourownblog.com/blog-image-performance/&quot;&gt;&lt;b&gt;“THE BIGGEST MISTAKE YOU’RE PROBABLY MAKING WITH YOUR BLOG IMAGES + CHEAT SHEET”&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thank you Marianne! :)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://designyourownblog.com/wp-content/uploads/2015/10/biggest-blog-mistake-image-performance-2.jpg&quot;&gt;Featured Image Source&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://akshaychandra92.github.io/journal/images-size-for-better-performance/</link>
+        <guid isPermaLink="true">http://akshaychandra92.github.io/journal/images-size-for-better-performance/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Multiple Galleries</title>
+        <description>&lt;html class=&quot;no-js&quot; lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta content=&quot;charset=utf-8&quot; /&gt;
+&lt;/head&gt;
+
+    &lt;body&gt;
+
+&lt;section id=&quot;content&quot; role=&quot;main&quot;&gt;
+		&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;br /&gt;&lt;br /&gt;
+			&lt;h2&gt;Multiple Galleries&lt;/h2&gt;
+
+
+
+
+&lt;p&gt; Content of your post HERE &lt;/p&gt;
+
+&lt;p&gt; Add as many paragraphs amongst your galleries as you want. &lt;/p&gt;
+
+
+           &lt;!-- Gallery __--&gt;
+			
+
+
+&lt;div class=&quot;gallery masonry-gallery&quot;&gt;
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg1.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg1.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg2.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg2.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg3.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g01/bg3.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+&lt;/div&gt;
+
+
+&lt;!-- end of GALLERY __ --&gt;
+
+&lt;p&gt; Add as many galleries as you want, including as many photos as you want. Simply edit the &lt;b&gt;FRONT MATTER&lt;/b&gt; of the post, adding the corresponding &lt;b&gt;path&lt;/b&gt;, &lt;b&gt;caption&lt;/b&gt; and &lt;b&gt;copyright&lt;/b&gt; info for each one of your photos. &lt;/p&gt;
+
+           &lt;!-- Gallery __--&gt;
+			
+
+
+&lt;div class=&quot;gallery masonry-gallery&quot;&gt;
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg1.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg1.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg2.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg2.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+
+  &lt;figure class=&quot;gallery-item&quot;&gt;
+
+	&lt;header class=&quot;gallery-icon&quot;&gt;
+
+&lt;a href=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg3.jpg&quot; class=&quot;popup&quot; title=&quot;IMAGE TITLE&quot; data-caption=&quot;© photorama&quot;&gt;
+&lt;img src=&quot;http://akshaychandra92.github.io/img/galleries/g02/bg3.jpg&quot; /&gt;&lt;/a&gt;
+						
+	&lt;/header&gt;	
+		
+   &lt;figcaption class=&quot;gallery-caption&quot;&gt;
+		&lt;div class=&quot;entry-summary&quot; id=&quot;IMAGE TITLE&quot;&gt;
+				&lt;h3&gt;IMAGE TITLE&lt;/h3&gt;
+					&lt;p&gt;© photorama&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/figcaption&gt;
+				&lt;/figure&gt;
+
+  
+&lt;/div&gt;
+
+
+&lt;!-- end of GALLERY __ --&gt;
+
+		&lt;/div&gt;&lt;!-- end of WRAPPER __ --&gt;
+	&lt;/section&gt;
+
+
+Photography by: &lt;a href=&quot;https://unsplash.com/photos/j0g8taxHZa0&quot;&gt;UNSPLASH&lt;/a&gt;
+&lt;/body&gt;&lt;/html&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://akshaychandra92.github.io/journal/multiple-galleries/</link>
+        <guid isPermaLink="true">http://akshaychandra92.github.io/journal/multiple-galleries/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
