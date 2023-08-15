@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="00c4d4e1-de23-4ac4-8b78-7c5387fb7d47" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 29.369999999999997%"/><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><div id="45c0de1d-e64a-4382-be5d-e469d3f12c54" class="column-list"><div id="aaef60bb-92c6-4314-b208-4844ef9eb5f0" style="width:25%" class="column"><figure id="906996cc-2fff-4e5c-b7ba-d7ede885cebf" class="image" style="text-align:left"><a href="Untitled%2000c4d4e1de234ac48b787c5387fb7d47/SnowDayVoo1.jpeg"><img style="width:4898px" src="Untitled%2000c4d4e1de234ac48b787c5387fb7d47/SnowDayVoo1.jpeg"/></a></figure><h2 id="a7949778-4d94-4825-bc18-a1c563436b2f" class="">CONTACT</h2><hr id="c42a544e-fb64-4d2d-adee-fc954f435068"/><p id="ecfc14d7-3dd8-4936-9009-ede3c18ef4b6" class="">📩  vaishu.ruby<a href="https://www.notion.so/b2dee2b8ba0c44529a9e9982d500bdd0?pvs=21">@gmail.com</a></p><p id="d641c9d8-b5b7-43d9-a4ab-283c824cbb40" class="">🌐  vvenkat6.github.io</p><p id="a74dfdbe-0dd7-4956-b2b4-2df69fa632f2" class="">🗺️  Raleigh, NC</p><h2 id="2827a0d8-55b5-4d4c-b90e-afdd5edb48f4" class="">EDUCATION </h2><hr id="c0613f17-9a96-4ae9-9fc8-b54b9f417d7f"/><p id="0b7ff261-03e3-4989-a626-b2e37c3c01e1" class=""><strong>2018 - 2023</strong></p><p id="dfd0c29f-822c-4d86-bec0-2b5e2b35639f" class=""><strong>Ph.D Bioinformatics</strong> | <strong><mark class="highlight-blue">North Carolina State University</mark></strong></p><p id="0872d619-dc7d-4e39-ad99-f58869857eef" class="">
+</p><p id="e5ee058f-acfe-4f30-8d63-2409b99c3935" class=""><strong>2014 - 2015</strong></p><p id="3d849415-700e-453f-9a45-d12cb6b3f6d8" class=""><strong>M.S Bioinformatics</strong> | <strong><mark class="highlight-blue">Georgia Institute of Technology</mark></strong></p><p id="98c76471-97f1-4140-81e7-1c6a29a9b72b" class="">
+</p><p id="ed1bc9e1-66a6-4f96-a12b-12bbc86b7891" class=""><strong>2010 - 2014</strong></p><p id="6bec6b98-d835-49a2-adc8-63c2ab2dec6a" class=""><strong>B.E Biotechnology </strong>| <strong><mark class="highlight-blue">C.M.R Institute of Technology</mark></strong></p><p id="e2c849b7-bc97-4d41-87db-d34758163ba2" class="">
+</p><h2 id="275195de-9656-4be3-950d-ba640699b206" class=""><em>SKILLS </em></h2><hr id="0027f6f6-551f-4f75-a92c-34561c664b73"/><ul id="96d7c852-6fd1-4268-9afb-3c6d49e09986" class="bulleted-list"><li style="list-style-type:disc">Python, R, Perl</li></ul><ul id="195befd3-2ddf-4fc4-b85d-ec0c853987a1" class="bulleted-list"><li style="list-style-type:disc">Standard NGS Bioinformatics toolsets</li></ul><ul id="3ec5618f-d3ea-401f-8215-52bb40ad437f" class="bulleted-list"><li style="list-style-type:disc">Human genomics</li></ul><ul id="5e1d20a2-690a-404b-9bf0-b3a1c61796e3" class="bulleted-list"><li style="list-style-type:disc">Scripting and Statistical Analysis</li></ul><ul id="de039018-cfb8-4bd3-966e-28df07a88cbb" class="bulleted-list"><li style="list-style-type:disc">Website Development</li></ul><h2 id="04d77905-4499-49f2-a07e-c961cce5bbb4" class="">SOCIALS  </h2><hr id="68b8ca06-9063-44e1-bea3-989008152607"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e686dc53-98c1-41ef-8b30-9bf6d482b4ca"><div style="font-size:1.5em"><img class="icon" src="Untitled%2000c4d4e1de234ac48b787c5387fb7d47/linkedin_480px.png"/></div><div style="width:100%"><a href="https://www.linkedin.com/in/vaishnavi-venkat-9b580378/">@vvenkat</a></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3693a2a5-f085-448f-b772-f665f95d31d8"><div style="font-size:1.5em"><img class="icon" src="Untitled%2000c4d4e1de234ac48b787c5387fb7d47/icons8-instagram-48.png"/></div><div style="width:100%"><a href="https://www.instagram.com/">@</a><a href="https://www.instagram.com/whimsically.ever.after">vvenkat</a></div></figure><p id="2274a5f5-422e-437e-985f-2588ae1733e5" class="">
+</p></div><div id="18105d37-ba26-409b-906c-a71a40c54ebc" style="width:74.99999999999997%" class="column"><figure id="e135de3d-a400-4f10-875d-114a182c5efe" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="2.488em"><mrow><mtext mathvariant="bold">Vaishnavi</mtext><mtext> </mtext><mtext mathvariant="bold">Venkat</mtext></mrow><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mi>B</mi><mi>i</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>c</mi><mi>s</mi><mi>S</mi><mi>c</mi><mi>i</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>s</mi><mi>t</mi></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Huge \textbf {Vaishnavi Venkat} \\
+\small Bioinformatics Scientist</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7277667199999998em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size11"><span class="mord textbf">Vaishnavi Venkat</span></span></span><span class="mspace newline sizing reset-size6 size11"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.05017em;">B</span><span class="mord mathnormal sizing reset-size6 size5">i</span><span class="mord mathnormal sizing reset-size6 size5">o</span><span class="mord mathnormal sizing reset-size6 size5">in</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.10764em;">f</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.02778em;">or</span><span class="mord mathnormal sizing reset-size6 size5">ma</span><span class="mord mathnormal sizing reset-size6 size5">t</span><span class="mord mathnormal sizing reset-size6 size5">i</span><span class="mord mathnormal sizing reset-size6 size5">cs</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.05764em;">S</span><span class="mord mathnormal sizing reset-size6 size5">c</span><span class="mord mathnormal sizing reset-size6 size5">i</span><span class="mord mathnormal sizing reset-size6 size5">e</span><span class="mord mathnormal sizing reset-size6 size5">n</span><span class="mord mathnormal sizing reset-size6 size5">t</span><span class="mord mathnormal sizing reset-size6 size5">i</span><span class="mord mathnormal sizing reset-size6 size5">s</span><span class="mord mathnormal sizing reset-size6 size5">t</span></span></span></span></span></div></figure><p id="38f802f4-5adb-404b-b355-adbdabe1d9df" class=""><em>Hello there! I&#x27;m a creative, motivated and persistent problem solver passionate about integrating machine learning to help researchers manage, process and analyze genomic and molecular data in an effort to improve the public health sector.</em></p><p id="bcd98fa8-8143-46d8-96d0-425f77bdd86c" class="">
+</p><h3 id="106d56e9-316e-4437-8439-ce9f4310cfbe" class=""><strong>UNIVERSITY RESEARCH</strong></h3><hr id="e0d4d37e-b8fc-4afa-a119-8d865a5d9d91"/><ul id="c16ca946-a262-4a98-b5e2-f379dde9f37f" class="bulleted-list"><li style="list-style-type:disc"><strong>Evaluating the use of random forests to obtain polygenic risk scores (PRS):</strong> Investigated different approaches to integrate random forests to improve prediction accuracy while predicting PRS with simulations and Taiwan BioBank Data. (PI: Jung-Ying Tzeng, 2019-2023)</li></ul><ul id="aa9a4546-866f-471c-b266-7ed4326745cc" class="bulleted-list"><li style="list-style-type:disc"><strong>Atlas of imprint control genes:</strong> Identified a list of putatively imprinted genes using RNA-Seq data by identifying clusters of genes that show biased expression around a set of putative imprint control regions. (PI: David Skaar and Cathrine Hoyo, 2020-2023)</li></ul><ul id="8b66a708-5838-4124-bad7-df1f65436a01" class="bulleted-list"><li style="list-style-type:disc"><strong>PRS Prediction utilizing transfer learning with false negative control</strong>: Assessed the feasibility of utilizing false-negative control to effectively leverage information from base data with varying ancestral backgrounds for improved prediction accuracy and computational efficiency while predicting PRS. (Advisor: Jung-Ying Tzeng and Jessie Jeng, 2023)</li></ul><ul id="1ab3181f-f872-4a1b-9494-ca212d4c6d9e" class="bulleted-list"><li style="list-style-type:disc"><strong>Immunogenomics of PRRSV-2 using RNA-Seq:</strong> Investigated changes in transcriptome profiles and biological pathways of PRRSV-2 infected pig cells, utilizing RNA-seq data with differential abundance analysis, machine learning, and functional analysis techniques (PI: Elisa Crisci, Spring 2022)</li></ul><ul id="be2fe8e0-84f1-42b1-b88e-9ed7d5b89bbe" class="bulleted-list"><li style="list-style-type:disc"><strong>Terrain Identification from IMU Streams using a Recurrent Neural Network:</strong> Processed the time series data with overlapping/slicing; employed SMOTE for data augmentation; implemented the recurrent neural network with LSTM cell using Keras of TensorFlow in Python; tuned the structure and hyperparameters based on the model performance evaluated using training/testing loss and F1 score. (Spring 2022)</li></ul><ul id="283d61e2-85c6-4d97-ba64-dde6db79ee6c" class="bulleted-list"><li style="list-style-type:disc"><strong>Prediction of Chemical Ligands Using Molecular Dynamic Simulations: </strong>Predicted ligand responsiveness for C.<em> elegans</em> G-Protein Coupled Receptors using homology models and molecular dynamics simulations, aiming to overcome challenges in ligand prediction due to receptor diversity and rapid evolution (PI: Patrick McGrath, Aug 2014-Dec 2015)</li></ul><ul id="39d99ebd-ae6e-4d9c-8349-1acdf19b2496" class="bulleted-list"><li style="list-style-type:disc"><strong>King Typing Tool:</strong> Developed a typing tool for comparative genomics for species delineation using a minimum XOR function to determine the evolutionary distance between two genomes (Advisor: Dr. King Jordan, Jan 2015- April 2015, <a href="http://gbrowse2015.biology.gatech.edu/">http://gbrowse2015.biology.gatech.edu</a>)</li></ul><h3 id="78caad4d-f1b5-4db9-92fe-69c9cc650685" class=""><strong>PROFESSIONAL EXPERIENCE </strong></h3><hr id="0b816ce7-c109-4cea-bee0-909031290ef0"/><div id="e0f5057b-6374-47d7-8871-92075f75475a" class="column-list"><div id="e6cc23a7-b042-4ec7-9775-9851d2b94630" style="width:12.5%" class="column"><p id="b9d35873-6d88-41da-9209-e7e9d01de9df" class=""><strong>2016 - 2018</strong></p></div><div id="4956afaa-d459-419f-827e-c1e9c939aff5" style="width:87.5%" class="column"><p id="28e42f90-69ed-4814-b54c-e8c8c360329e" class=""><strong>Bioinformatician I</strong> | <strong><mark class="highlight-blue">Duke University, Center for Applied Genomics &amp; Precision Medicine</mark></strong></p><p id="00a78ecf-f65e-49d8-9da8-ee580cf30f83" class="">Processed raw data in different modes of custom pipeline, performed univariate and multivariate testing and interfaced with key stakeholders to ensure timely completion of projects.</p><p id="bfcb48f7-8cf1-4339-a78f-31aeb49f0fdf" class=""><strong>Projects:</strong></p><ul id="e3588f3c-df2b-45c8-aa76-752f47e2fc64" class="bulleted-list"><li style="list-style-type:disc">Statistical analyst on studying RNA-seq expression in HIV-1-infected individuals who make broadly neutralizing antibodies. (PI: Todd Bradley, grant from NIH/NIAID/DAIDS and the Medical Research Council)</li></ul><ul id="c6eaffb6-9830-4027-b2d3-9ab7e2e0f893" class="bulleted-list"><li style="list-style-type:disc">Lead analyst for studying tissue transcriptome immune profiles to better understand Chronic Allograft Dysfunction (CLAD) and successful long term clinical outcomes after transplant (PI: Scott Palmer, CTOT Ancillary Studies Fund, 2015-17)</li></ul><ul id="94bc30c9-8fe3-4b5a-9363-4a2bafdd9eb2" class="bulleted-list"><li style="list-style-type:disc">RNA-seq analyst for a clinical trial studying effects of Ticagrelor in Diabetes Cohort (PI: Deepak Voora, AstraZeneca Healthcare Foundation award, 2015-2018)</li></ul><ul id="097c6cc7-ac5d-47f2-b4fd-2e6f14602887" class="bulleted-list"><li style="list-style-type:disc">Lead analyst and bioinformatician on a pilot study for investigating circulating miRNA expression profiles for Epilepsy (PI: Tim Veldman, CAGPM, 2016-17)</li></ul><ul id="5b8bf777-b4fc-4c43-a284-f8d2c5543205" class="bulleted-list"><li style="list-style-type:disc">Bioinformatician and preliminary analyst for studying baseline bio-molecular models to predict infectious disease susceptibility (PI: Geoffrey Ginsburg, Biochronicity, DARPA, 2015-2017)</li></ul><ul id="7e0c60c5-dcba-4484-978e-cddfa395be98" class="bulleted-list"><li style="list-style-type:disc">Bioinformatician and preliminary analyst on a study for diagnosis of acute respiratory illness for global pathogens using host gene expressions (PI: Chris Woods, DoD, USAMRIID, 2016-18)</li></ul><p id="1bd612a6-df3f-467b-a13e-89b83c5f1493" class=""><strong>Pipeline Development:</strong></p><ul id="3a7585f4-dfd9-4799-9f04-8e05a08627f0" class="bulleted-list"><li style="list-style-type:disc">Designed, developed and maintained RNA-Seq pipeline for efficient batch processing to allow for flexibility depending on type of sequencing and user’s preference for existing quantification methods.</li></ul><ul id="8a275913-b161-4c3d-a7b7-a3a490b24724" class="bulleted-list"><li style="list-style-type:disc">Developed pipeline to visualize RNA-seq expression on whole genome, to be used downstream for ranking transcripts for PCR validation and assay development.</li></ul><ul id="6676e881-4945-4a66-821e-ba0f69690740" class="bulleted-list"><li style="list-style-type:disc">Developed MiRNA-Seq pipeline to process data and study expression profiles</li></ul></div></div><div id="116e6b72-5972-4b12-a8d8-f62accc680dd" class="column-list"><div id="3773294d-c082-412b-abef-a8f6e785f720" style="width:12.5%" class="column"><p id="95bda5ef-33b0-4a17-9755-b527df62fff2" class=""><strong>2015 - 2015</strong></p></div><div id="47d113e2-167c-4b2e-b041-f4399bcb6929" style="width:87.5%" class="column"><p id="19436b68-e8fd-4324-9411-7c2653fa591b" class=""><strong>Bioinformatics Intern</strong> | <strong><mark class="highlight-blue">GaTech Research, Applied Bioinformatics Laboratory</mark></strong></p><ul id="844d65e0-b97d-44b6-b09c-d51c1d4f4846" class="bulleted-list"><li style="list-style-type:disc">Designed and developed a computational genomics pipeline to efficiently batch process raw data</li></ul><ul id="6d35f187-781d-431b-9b53-980326c933d4" class="bulleted-list"><li style="list-style-type:disc">Assessed, evaluated and documented different tools for Genome Assembly to be used in hands-on instructional modules for training.</li></ul></div></div><h3 id="77514c5e-553c-4739-ba11-a3814a518131" class="">MANUSCRIPTS</h3><hr id="b173f15b-9ece-469a-b923-3983628e4bb7"/><p id="1273224e-f725-4ee5-a497-8aeab63a8d6a" class="">Todd Bradley, Dimitra Peppa, Isabela Pedroza-Pacheco, Dapeng Li, Derek W. Cain, Ricardo Henao, <strong>Vaishnavi Venkat</strong>, et al. RAB11FIP5 Expression and Altered Natural Killer Cell Function Are Associated with Induction of HIV Broadly Neutralizing Antibody Responses. Cell, 2018; DOI: <a href="https://doi.org/10.1016/j.cell.2018.08.064">10.1016/j.cell.2018.08.06</a></p><p id="072e9ef4-ece8-4b01-adfa-c7d94e3f769e" class="">JL Todd, V Venkat, R Henao, et al. Bronchoalveolar Lavage Fluid Proteome in Chronic Lung Allograft Dysfunction. The Journal of Heart and Lung Transplantation, 2018; DOI: <a href="https://doi.org/10.1016/j.healun.2018.01.496">10.1016/j.healun.2018.01.496</a></p><p id="04dff32e-b78b-42ff-8149-a3a1f61b73f6" class="">X. Jessie Jeng, Yifei Hu, <strong>Vaishnavi Venkat</strong>, Tzu-Pin Lu, Jung-Ying Tzeng. Transfer Learning with False Negative Control Improves Polygenic Risk Prediction. DOI: <a href="https://doi.org/10.1101/2023.01.02.522532">10.1101/2023.01.02.522532</a> (<em>revision submitted</em>)</p><p id="7a860f04-e81d-4801-bf42-c76ae7af87c4" class=""><strong>Vaishnavi Venkat</strong>, Kaylyn Clark, Li San Wang, Jung-Ying TzengPRS. Evaluating the use of Random Forest for obtaining Polygenic Risk Score. (<em>in preparation</em>)</p><p id="8522f894-6f16-410c-9625-b7e2a1c11e43" class=""><strong>Vaishnavi Venkat</strong>, David Skaar, Anthony Planchart, Susan Murphy, Jung-Ying Tzeng, Catherine Ho-yo. Identification of putatively imprinted genes using RNA-Seq data. (<em>in preparation</em>)</p><h3 id="5c526ebc-4751-4151-a2f8-f9697257e184" class="">HOBBIES</h3><hr id="ce95033a-bb1f-4757-a5cf-3772888a341f"/><div id="47715da6-8f83-4e70-abee-8d7e113eec75" class="column-list"><div id="7d17ee44-ea6d-4fec-af57-1e4b203a6836" style="width:100%" class="column"><p id="545bea32-cae2-4c02-b0a5-1ea10bab51b1" class="">📷 Dogs</p><p id="6d344cf2-85dc-4b18-83f0-c4a34822aee5" class="">
+</p></div><div id="089d3b7f-3629-4827-b06d-75174ef88a9d" style="width:100%" class="column"><p id="ef261ad4-2b99-4b7a-8bb7-63a66a576729" class="">💼 Photography</p></div><div id="7a5cd952-2884-48b3-8ac7-abb9cdf9ee10" style="width:100%" class="column"><p id="ec1a8d2f-8203-4cf2-a97a-b8043d6534ce" class="">✈️ Travelling</p><p id="b34920a9-255a-45b8-be01-79f7300ea415" class="">
+</p></div><div id="d73fe130-b32f-44b2-a9c7-e891be7d0453" style="width:100%" class="column"><p id="bfbec843-eceb-43ed-a6d2-c6f92e53d59d" class="">Cooking</p><p id="c3f0982a-4897-4adc-837d-f3ed7201b354" class="">
+</p></div></div><p id="4d4fcffb-9b2c-497a-ae42-292a6964e641" class="">
+</p></div></div><p id="21a3026f-05a1-4475-b47e-84d5a2c8cd78" class="">
+</p><p id="cd588d3a-21d1-4309-b336-fbbfa127e013" class="">
+</p><p id="c953cd24-9994-447e-ab1a-7ecb072690d8" class="">
+</p><p id="a929d4f3-5828-4c22-888a-eaf04f7a3c5b" class="">
+</p></div></article></body></html>
